@@ -255,10 +255,10 @@ public class GamePanel extends JPanel {
     }
 
     private void checkGameState() {
-        if (score >= TARGET_SCORE) {
-            state = GameState.WIN;
-        } else if (movesLeft <= 0) {
+        if (movesLeft <= 0) {
             state = GameState.LOSE;
+        } else if (score >= TARGET_SCORE) {
+            state = GameState.WIN;
         } else if (!board.hasValidMoves()) {
             board.initBoard();
         }
